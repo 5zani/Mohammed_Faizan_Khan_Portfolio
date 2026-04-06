@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Faizan Khan — Data Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;
+  --gold-light:#e8c97a;
+  --gold-dim:#7a5e24;
+  --ink:#0d0d0d;
+  --ink2:#1a1a1a;
+  --ink3:#2a2a2a;
+  --cream:#f7f4ef;
+  --cream2:#ede8df;
+  --cream3:#e0d9cd;
+  --smoke:#9a9080;
+  --rule:#d4cfc5;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--ink);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold);letter-spacing:3px}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:11px;color:#888;text-decoration:none;letter-spacing:2px;text-transform:uppercase;font-weight:400;transition:color .25s}
+.nav-links a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{background:var(--ink);padding:7rem 3rem 5rem;position:relative;overflow:hidden}
+.hero-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem;font-weight:400}
+.hero-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--gold-dim);vertical-align:middle;margin-right:10px}
+h1.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,6.5rem);font-weight:300;line-height:1;color:#f0ebe2;letter-spacing:-1px;margin-bottom:.5rem}
+h1.hero-name em{font-style:italic;color:var(--gold)}
+.hero-title{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#666;font-weight:300;margin-bottom:3rem;margin-top:1.5rem}
+.hero-desc{max-width:520px;font-size:15px;color:#888;line-height:1.8;font-weight:300;margin-bottom:3rem;border-left:1px solid var(--gold-dim);padding-left:1.5rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--gold);color:var(--ink);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background .2s}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border:1px solid #444;color:#888;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:400;transition:all .2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-bg-text{position:absolute;right:-20px;bottom:-40px;font-family:'Cormorant Garamond',serif;font-size:200px;font-weight:300;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none;letter-spacing:-5px;user-select:none}
+
+/* STATS */
+.stats-bar{background:var(--ink2);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #2a2a2a}
+.stat{padding:2rem;border-right:1px solid #2a2a2a;text-align:center}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);line-height:1;display:block}
+.stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#555;margin-top:6px;display:block}
+
+/* SECTION */
+.section{padding:6rem 3rem;max-width:1000px;margin:0 auto}
+.section-alt{background:var(--cream2);padding:6rem 3rem}
+.section-alt-inner{max-width:1000px;margin:0 auto}
+.sec-label{display:flex;align-items:center;gap:1rem;margin-bottom:.75rem}
+.sec-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);font-style:italic}
+.sec-line{flex:1;height:1px;background:var(--rule);max-width:40px}
+h2.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-0.5px;margin-bottom:3rem;line-height:1.1}
+h2.sec-title em{font-style:italic;color:var(--gold)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.skill-card{background:var(--cream);padding:2rem 1.75rem;transition:background .2s}
+.skill-card:hover{background:var(--cream2)}
+.skill-cat{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.25rem;font-weight:500}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;color:var(--smoke);background:var(--cream2);border:1px solid var(--cream3);padding:4px 10px;font-weight:400;letter-spacing:.5px}
+
+/* EXPERIENCE */
+.exp-card{border:1px solid var(--rule);background:var(--cream);padding:2.5rem;position:relative}
+.exp-card::after{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:var(--gold)}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--rule)}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;line-height:1.1}
+.exp-co{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);margin-top:6px;font-weight:500}
+.exp-date{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--smoke);background:var(--cream2);border:1px solid var(--rule);padding:6px 14px;white-space:nowrap;align-self:flex-start}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.exp-list li{font-size:14px;color:#555;line-height:1.7;padding-left:1.25rem;position:relative;font-weight:300}
+.exp-list li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:1px;background:var(--gold)}
+
+/* EDUCATION */
+.edu-card{border:1px solid var(--rule);background:var(--cream);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}
+.edu-degree{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400}
+.edu-school{font-size:12px;letter-spacing:1px;color:var(--gold-dim);text-transform:uppercase;margin-top:4px;font-weight:500}
+.edu-date{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--smoke);background:var(--cream2);border:1px solid var(--rule);padding:6px 14px;white-space:nowrap}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.project-card{background:var(--cream);padding:2rem 1.75rem;display:flex;flex-direction:column;transition:background .2s}
+.project-card:hover{background:#f0ebe0}
+.project-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--cream3);line-height:1;margin-bottom:.75rem}
+.project-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:.5rem;line-height:1.2}
+.project-date{font-size:10px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.project-desc{font-size:13.5px;color:#666;line-height:1.75;flex:1;font-weight:300}
+.project-tech{display:flex;flex-wrap:wrap;gap:5px;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+.tech-tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dim);font-weight:500}
+.tech-tag::after{content:'·';margin:0 6px;color:var(--cream3)}
+.tech-tag:last-child::after{display:none}
+
+/* ACHIEVEMENTS */
+.ach-grid{display:flex;flex-direction:column;border:1px solid var(--rule)}
+.ach-item{display:flex;gap:2rem;padding:1.75rem 2rem;border-bottom:1px solid var(--rule);align-items:flex-start;background:var(--cream);transition:background .2s}
+.ach-item:last-child{border-bottom:none}
+.ach-item:hover{background:var(--cream2)}
+.ach-idx{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--cream3);flex-shrink:0;line-height:1;padding-top:2px}
+.ach-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px}
+.ach-desc{font-size:13px;color:#777;line-height:1.65;font-weight:300}
+
+/* CERTS */
+.certs-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:3rem}
+.cert-card{background:var(--cream);padding:1.5rem 1.75rem}
+.cert-org{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.5rem;font-weight:500}
+.cert-name{font-size:14px;color:var(--ink);font-weight:400;line-height:1.4}
+.cert-year{font-size:11px;color:var(--smoke);margin-top:6px}
+
+/* CONTACT */
+.contact-section{background:var(--ink);padding:5rem 3rem}
+.contact-inner{max-width:1000px;margin:0 auto}
+.contact-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,4rem);font-weight:300;color:#e8e3d8;margin-bottom:.5rem}
+.contact-heading em{color:var(--gold);font-style:italic}
+.contact-sub{font-size:13px;color:#555;letter-spacing:2px;text-transform:uppercase;margin-bottom:3rem;font-weight:400}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#2a2a2a;border:1px solid #2a2a2a}
+.contact-card{background:var(--ink2);padding:1.75rem 2rem;text-decoration:none;display:block;transition:background .2s}
+.contact-card:hover{background:var(--ink3)}
+.contact-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#555;margin-bottom:8px}
+.contact-val{font-size:13px;color:var(--gold-light);font-weight:300;word-break:break-all}
+
+footer{background:var(--ink);border-top:1px solid #1a1a1a;text-align:center;padding:1.5rem;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#444}
+
+@media(max-width:600px){
+  nav{padding:0 1.25rem}
+  .nav-links{gap:1rem}
+  .hero{padding:4rem 1.25rem 3rem}
+  .section{padding:4rem 1.25rem}
+  .section-alt{padding:4rem 1.25rem}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid #2a2a2a}
+  .contact-section{padding:3rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">MFK</span>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-text">DATA</div>
+  <div class="hero-label">Data Engineer · Coimbatore, India</div>
+  <h1 class="hero-name">Mohammed<br><em>Faizan</em> Khan</h1>
+  <div class="hero-title">Data Engineering · Analytics · AI &amp; ML</div>
+  <p class="hero-desc">Building the pipelines, frameworks, and dashboards that turn raw data into decisions. Specialised in ETL validation, MongoDB aggregations, and real-time analytics — with a deep interest in machine learning.</p>
+  <div class="hero-ctas">
+    <a href="mailto:faizankhanyahoou@gmail.com" class="btn-gold">Get in touch</a>
+    <a href="https://www.linkedin.com/in/mohammedfaizankhan" class="btn-outline" target="_blank">LinkedIn ↗</a>
+    <a href="https://github.com/5zani" class="btn-outline" target="_blank">GitHub ↗</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Core Skills</span></div>
+  <div class="stat"><span class="stat-n">3</span><span class="stat-l">Projects</span></div>
+  <div class="stat"><span class="stat-n">3</span><span class="stat-l">Certifications</span></div>
+  <div class="stat"><span class="stat-n">1</span><span class="stat-l">Publication</span></div>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <div class="sec-label"><span class="sec-num">I</span><span class="sec-line"></span></div>
+  <h2 class="sec-title">Technical <em>expertise</em></h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-cat">Data &amp; Databases</div>
+      <div class="skill-tags"><span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">DBeaver</span><span class="tag">JSON</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Programming</div>
+      <div class="skill-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">PySpark</span><span class="tag">Selenium</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">BI &amp; Visualisation</div>
+      <div class="skill-tags"><span class="tag">Power BI</span><span class="tag">Grafana</span><span class="tag">Tableau</span><span class="tag">Excel</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Data Engineering</div>
+      <div class="skill-tags"><span class="tag">ETL Pipelines</span><span class="tag">Data Quality</span><span class="tag">REST API</span><span class="tag">Databricks</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Machine Learning</div>
+      <div class="skill-tags"><span class="tag">Scikit-learn</span><span class="tag">OpenCV</span><span class="tag">Supervised ML</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">Tools &amp; Workflow</div>
+      <div class="skill-tags"><span class="tag">Jira / Agile</span><span class="tag">Git / GitHub</span><span class="tag">VS Code</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section-alt" id="experience">
+  <div class="section-alt-inner">
+    <div class="sec-label"><span class="sec-num">II</span><span class="sec-line"></span></div>
+    <h2 class="sec-title">Professional <em>experience</em></h2>
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Data Engineer</div>
+          <div class="exp-co">Aggregate Intelligence · Coimbatore</div>
+        </div>
+        <span class="exp-date">Nov 2025 — Present</span>
+      </div>
+      <ul class="exp-list">
+        <li>Developed and implemented automated data quality check frameworks to validate accuracy, completeness, and consistency across pipelines.</li>
+        <li>Designed and delivered interactive business dashboards providing stakeholders with real-time visibility into key metrics and KPIs.</li>
+        <li>Engineered and maintained MongoDB aggregation pipelines to process, transform, and deliver structured data for reporting and analytics.</li>
+        <li>Managed MongoDB collections, data models, and ensured data integrity across environments.</li>
+        <li>Developed and maintained API-based data ingestion workflows pulling from external and internal sources into the data platform.</li>
+      </ul>
+    </div>
+    <div class="edu-card">
+      <div>
+        <div class="edu-degree">B.Sc in Data Science</div>
+        <div class="edu-school">Sri Krishna Adithya College of Arts and Science · Coimbatore</div>
+      </div>
+      <span class="edu-date">Aug 2022 — May 2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="sec-label"><span class="sec-num">III</span><span class="sec-line"></span></div>
+  <h2 class="sec-title">Selected <em>projects</em></h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-num">01</div>
+      <h3>Data Quality Validation Framework</h3>
+      <div class="project-date">Dec 2025</div>
+      <p class="project-desc">SQL-based validation checks for completeness, accuracy, and consistency. Automated detection of missing, duplicate, and inconsistent records using Python. Integrated Grafana for near real-time pipeline health visualisation and Power BI for KPI reporting.</p>
+      <div class="project-tech">
+        <span class="tech-tag">SQL</span><span class="tech-tag">Python</span><span class="tech-tag">Grafana</span><span class="tech-tag">Power BI</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <h3>MongoDB Data Inspection Tool</h3>
+      <div class="project-date">Jan 2026</div>
+      <p class="project-desc">Python script connecting to MongoDB collections to run quality checks on document structure and field completeness. Generates JSON reports summarising nulls, schema violations, and field-level statistics. Currently in production at Aggregate Intelligence.</p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span><span class="tech-tag">MongoDB</span><span class="tech-tag">JSON</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <h3>Accident Detection System</h3>
+      <div class="project-date">2025</div>
+      <p class="project-desc">Computer vision model to identify and classify road accident scenarios from video data. Processed and labelled raw video datasets to create structured training data. Evaluated using accuracy, precision, recall, and F1-score metrics.</p>
+      <div class="project-tech">
+        <span class="tech-tag">OpenCV</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">Python</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section-alt">
+  <div class="section-alt-inner">
+    <div class="sec-label"><span class="sec-num">IV</span><span class="sec-line"></span></div>
+    <h2 class="sec-title">Achievements &amp; <em>recognition</em></h2>
+    <div class="ach-grid">
+      <div class="ach-item">
+        <div class="ach-idx">01</div>
+        <div>
+          <div class="ach-title">First automated dashboard — Aggregate Intelligence</div>
+          <div class="ach-desc">Built the organisation's first automated dashboard powered by MongoDB pipelines, eliminating manual reporting and saving significant team hours every week. — 2026</div>
+        </div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-idx">02</div>
+        <div>
+          <div class="ach-title">Research publication — Quantum Mechanics</div>
+          <div class="ach-desc">Published a research paper on Quantum Mechanics and Research. — 2024</div>
+        </div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-idx">03</div>
+        <div>
+          <div class="ach-title">National level paper presentation</div>
+          <div class="ach-desc">Presented at a national-level event on Quantum Mechanics, organised by SUGNA College of Technology, Coimbatore. — 2024</div>
+        </div>
+      </div>
+    </div>
+    <div class="certs-row">
+      <div class="cert-card">
+        <div class="cert-org">NPTEL</div>
+        <div class="cert-name">Enhancing Soft Skills and Personality</div>
+        <div class="cert-year">2024</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-org">Infosys Springboard</div>
+        <div class="cert-name">Object Detection &amp; Deep Learning with OpenCV</div>
+        <div class="cert-year">2024</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-org">Accenture Forage</div>
+        <div class="cert-name">Data Analytics and Visualisation Job Simulation</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-heading">Let's <em>connect</em></div>
+    <div class="contact-sub">Open to new opportunities</div>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:faizankhanyahoou@gmail.com">
+        <div class="contact-lbl">Email</div>
+        <div class="contact-val">faizankhanyahoou@gmail.com</div>
+      </a>
+      <a class="contact-card" href="tel:+919751527326">
+        <div class="contact-lbl">Phone</div>
+        <div class="contact-val">+91 97515 27326</div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/mohammedfaizankhan" target="_blank">
+        <div class="contact-lbl">LinkedIn</div>
+        <div class="contact-val">mohammedfaizankhan ↗</div>
+      </a>
+      <a class="contact-card" href="https://github.com/5zani" target="_blank">
+        <div class="contact-lbl">GitHub</div>
+        <div class="contact-val">github.com/5zani ↗</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>Mohammed Faizan Khan · Coimbatore, Tamil Nadu · 2026</footer>
+
+</body>
+</html>
